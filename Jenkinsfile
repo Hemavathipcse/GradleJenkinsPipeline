@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         gradle 'Gradle'  // Ensure this matches the name configured in Jenkins
+        jdk 'JDK'
     }
     stages {
         stage('Checkout') {
@@ -17,11 +18,11 @@ pipeline {
             }
         }
 
-      //  stage('Test') {
-       //     steps {
-       //         sh 'mvn test'  // Run unit tests
-        //    }
-        //}
+       stage('Test') {
+          steps {
+              sh 'mvn test'  // Run unit tests
+          }
+        }
 
         
         
